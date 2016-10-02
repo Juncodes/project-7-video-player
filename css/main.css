@@ -1,0 +1,94 @@
+/*********************************
+	MAIN STYLE -- Basic Styles
+*********************************/
+html {
+	background-color: #e5e5e5;
+}
+div.wrapper {
+	width: 85%;
+	height: 500px; /* fix height for video wrapper */
+	margin: 0 auto;
+	background-color: #fff;
+}
+video {
+	width: 100%;
+}
+section {
+	display: inline-block;
+	padding: 0 20px;
+}
+p {
+	align-content: left;
+	line-height: 1.5;
+}
+/*********************************
+	MAIN STYLE -- Video controls
+*********************************/
+
+#media-controls {
+	position: relative;
+	bottom: 50px;
+	
+	background-color: rgba(59, 58, 58, 0.6);
+	border: none;	
+}
+.no-controls {
+	position: relative;
+	top: -25px;
+}
+#l-control-container {
+	display: inline-block;
+	position: relative;	
+}
+.currentTime,
+.split,
+.totalTime {
+	display: inline-block;
+}
+.currentTime {
+	position: relative;
+
+}
+#r-control-container {
+	display: inline-block;
+	position: absolute;
+	right: 10px;
+}
+.play-btn,
+.mute-on-off,
+.full-screen,
+.volume-bar {
+	display: inline-block;
+	flex-direction: row;
+	flex-wrap: wrap;
+	font-size: 18px;	
+}
+.volume-hide {
+	display: none;
+}
+button {
+	border: none;
+}
+img {
+	color: #000;
+	width: 15px;
+	height: 16px;
+}
+#seek-bar {
+	width: 100%;
+}
+#play-pause,
+#mute,
+#full-screen {
+	background-color: rgba(0, 0, 0, 0)
+}
+#mute,
+#full-screen {
+	padding: 0 5px;
+}
+
+/**************************************
+MAIN STYLE -- color on vid progression
+**************************************/
+
+

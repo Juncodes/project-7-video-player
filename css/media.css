@@ -1,0 +1,19 @@
+/*********************************
+	Video Player Styling
+*********************************/
+.media controls {
+	background: rgba(56,64,71,0.98);
+	height: 30px;
+}
+
+.media controls button {
+	
+}
+
+.media .media-controls .media-captions-button {
+	
+}
+
+.media .media-controls .media-captions-selector {
+	
+}
