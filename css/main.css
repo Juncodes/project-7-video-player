@@ -11,7 +11,7 @@ div.wrapper {
 }
 #video-wrapper {
 	width: 85%;
-	height: 650px;
+	height: auto;
 	margin: 0 auto;
 	background-color: #fff;
 }
@@ -93,11 +93,13 @@ img {
 }
 
 /**************************************
-MAIN STYLE -- color on vid progression
+MAIN STYLE -- vid progression 
 **************************************/
 input {
     background: rgba(82, 82, 82, .9);
     -webkit-appearance: none;
 }
+
+
 
 
