@@ -29,19 +29,6 @@ window.onload = function() {
 	  }
 	});
 		
-	// Event listener for the mute button
-	muteIcon.addEventListener("click", function() {
-	  if (video.muted == false) {
-	    // Mute the video
-	    video.muted = true;
-	  } else {
-	    // Unmute the video
-	    video.muted = false;
-	    muteIcon.src = "icons/volume-on-icon.png";
-		}
-	});
-	// On click, volume seekbar shows
-	
 	// Event listener for the full-screen button
 	fullScreenButton.addEventListener("click", function() {
 	  if (video.requestFullscreen) {
@@ -56,43 +43,50 @@ window.onload = function() {
 	
 	// Update the seek bar as the video plays
 	video.addEventListener("timeupdate", function() {
-	  // Calculate the slider value
-	  var value = (video.currentTime / video.duration)*100;
-	  // Update the slider value
-	  seekBar.value = value;	  
-	});
+		// Calculate the slider value
+		var value = (video.currentTime / video.duration)*100;
+		// Update the slider value
+		seekBar.value = value;	 
+		// Update played video background color with value
+		seekBar.style.background = "-moz-linear-gradient(left,  #e78636 0%, #e78636 "+ value +"%, #525252 "+ value +"%, #525252 100%)";
+		seekBar.style.background = "-webkit-gradient(linear, left top, right top, color-stop(0%,#e78636), color-stop("+ value +"%,#e78636), color-stop("+ value +"%,#525252), color-stop(100%,#525252))";
+		seekBar.style.background = "-webkit-linear-gradient(left,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
+		seekBar.style.background = "-o-linear-gradient(left,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
+		seekBar.style.background = "-ms-linear-gradient(left,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
+		seekBar.style.background = "linear-gradient(to right,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
+	}); // end time update  
+
 	
 	
 		
 	// Pause the video when the slider handle is being dragged
 	seekBar.addEventListener("mousedown", function() {
-	  video.pause();
-	  // Update the button text to 'Play'
-	  playIcon.src = "icons/play-icon.png";
-	  
+		video.pause();
+		// Update the button text to 'Play'
+		playIcon.src = "icons/play-icon.png";
 	});
 
 	// Play the video when the slider handle is dropped
 	seekBar.addEventListener("mouseup", function() {
-	  video.pause();
-	  
-	  // Update the button text to 'Play'
-	  playIcon.src = "icons/play-icon.png";
+		video.pause();
+		
+		// Update the button text to 'Play'
+		playIcon.src = "icons/play-icon.png";
 	});
 	
 	
-	// Event listener for the volume bar
-	volumeBar.addEventListener("change", function() {
-	  // Update the video volume
-	  video.volume = volumeBar.value;
-	  if(volumeBar.value == 0) {
+  // Event listener for the volume bar
+  volumeBar.addEventListener("change", function() {
+  // Update the video volume
+  video.volume = volumeBar.value;
+		if(volumeBar.value == 0) {
 		  //update the icon on mute
 		  muteIcon.src = "icons/volume-off-icon.png";
-	  } else {
+		} else if(volumeBar.value > 0) {
 		  muteIcon.src = "icons/volume-on-icon.png";
-	  }
+		}
 	});
-
+	
 	// toggle volume bar
 	$('.mute').on("click", function() {
 		var volumeBar = $('#volume-bar');
@@ -104,28 +98,39 @@ window.onload = function() {
 	});
 	
 	//Video show hide controls on mouse over
-	var $video = $('#video');
+	var $video = $('#video-wrapper');
 	var $controls = $('#controls');
-	$('.wrapper').mouseenter(function() {
+	$video.mouseenter(function() {
 		if ($controls.is(":hidden")) {
 			$controls.show();	
 			$('#media-controls').removeClass("no-controls");
-		}else if($('.wrapper').mouseout()){
-			$controls.hide();
-			$('#media-controls').addClass("no-controls");
 		}
 	});// end mouseover
 	
-	// Shows currentTime/totalTime
-	var $currentTime = video.currentTime;
-	var $totalTime = video.duration;
-	var $timeCheck = '<div class="currentTime">' + $currentTime.toFixed(0) + '</div>';
-	$timeCheck += '<div class="split">'+ "/" +'</div>';
-	$timeCheck += '<div class="totalTime">' + $totalTime.toFixed(0)+ '</div>';
+	$video.mouseleave(function(){
+		if ($controls.is(":visible")) {
+			$controls.hide();	
+			$('#media-controls').addClass("no-controls");
+		}
+	});// end mouseleave
 	
-	$('#l-control-container').append($timeCheck).attr('currentTime, 0');
-		
 
+	// Event listener for the seek bar
+	$(document).ready(function(){
+		$("#video").on("timeupdate", function(event){
+			onTrackedVideoFrame(this.currentTime, this.duration);
+		});
+	});
+	var timeFormat = function(seconds){
+	var m = Math.floor(seconds / 60) < 10 ? '0' + Math.floor(seconds / 60) : Math.floor(seconds / 60);
+	var s = Math.floor(seconds - (m * 60)) < 10 ? '0' + Math.floor(seconds - (m * 60)) : Math.floor(seconds - (m * 60));
+	return m + ':' + s;
+	};
+	
+	function onTrackedVideoFrame(currentTime, duration){
+		$("#current").text(timeFormat(currentTime));
+		$("#totalTime").text(timeFormat(duration));
+	}
 };
 
 

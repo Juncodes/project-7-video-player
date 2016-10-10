@@ -9,7 +9,7 @@
 		<link href="css/main.css" rel="stylesheet">
 	
 <!-- Video container/ caption -->
-	<div class="wrapper">
+	<div id="video-wrapper">
 		<video  id="video" class="media">
 			<source src="video/video.mp4" type="video/mp4">
 			<source src="video/video.ogg" type="video/ogg">
@@ -27,9 +27,7 @@
 --> 
 <!-- Video Controls -->
 		<div id='media-controls'>
-			<div class="progress-bar">
-				 <input type="range" id="seek-bar" value="0">
-		    </div>
+			<input type="range" id="seek-bar" min="0" max="100" value="0" step="1">
 			<div id="controls">
 			    <div id="l-control-container">
 					<div class="play-btn">
@@ -37,6 +35,11 @@
 						<img src="icons/play-icon.png" id="play-icon">
 						<img src="icons/pause-icon.png" style="display: none;" id="pause-icon">
 						</button>
+						<div id="time-track">
+							<div id="current">0:00</div>
+							<div class="split">/</div>
+							<div id="totalTime">1:00</div>
+						</div>
 					</div>
 			    </div>
 			    <div id="r-control-container">
@@ -48,7 +51,7 @@
 				    </div>
 				    
 				    <div  class="volume-bar">
-				    	<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1" style="display: none;" >
+				    	<input type="range" id="volume-bar" min="0" max="1" step=".01" value="0" style="display: none;" >
 				    </div>
 		
 				    <div class="full-screen">
@@ -64,8 +67,7 @@
 <!-- text filter -->
 	<div class="wrapper">	
 		<section>
-			<body>
-				<p>
+			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus orci, sodales quis lacus vel, suscipit fermentum tellus. Phasellus nec dui luctus urna molestie posuere vel eu eros. Quisque aliquet consequat tortor mollis vehicula. Aliquam a tempor odio. Phasellus ut maximus ante. Aliquam feugiat fermentum mauris a tristique. Ut pharetra porta nulla, et venenatis lectus porttitor vitae. Pellentesque elementum, magna ut varius auctor, odio nulla aliquam diam, at ultrices purus sapien ut nulla. Fusce id diam lorem. Nam tempus dictum ligula, ut mattis dolor tempor vestibulum. 
 				</p>
 			
@@ -84,7 +86,6 @@
 				<p>
 					Proin euismod eros tincidunt magna ultricies, vitae volutpat tellus hendrerit. Nullam semper massa tellus, eu rutrum leo sollicitudin in. Quisque gravida congue ultricies. Donec feugiat, orci id eleifend faucibus, nibh nisi lacinia justo, quis euismod mi lacus eu lectus. Phasellus ultricies sit amet libero non convallis. Suspendisse convallis tortor ac neque volutpat venenatis. Nunc sagittis urna quis lorem eleifend ultrices. Mauris lectus enim, maximus at eros convallis, convallis mattis mauris.
 				</p>
-			</body>
 		</section>
 	</div>
 

@@ -6,7 +6,12 @@ html {
 }
 div.wrapper {
 	width: 85%;
-	height: 500px; /* fix height for video wrapper */
+	margin: 0 auto;
+	background-color: #fff;
+}
+#video-wrapper {
+	width: 85%;
+	height: 650px;
 	margin: 0 auto;
 	background-color: #fff;
 }
@@ -27,28 +32,28 @@ p {
 
 #media-controls {
 	position: relative;
-	bottom: 50px;
+	bottom: 47px;
 	
 	background-color: rgba(59, 58, 58, 0.6);
 	border: none;	
 }
 .no-controls {
 	position: relative;
-	top: -25px;
+	top: -15px;
+	height: 0;
 }
 #l-control-container {
 	display: inline-block;
-	position: relative;	
-}
-.currentTime,
-.split,
-.totalTime {
-	display: inline-block;
-}
-.currentTime {
-	position: relative;
 
 }
+#time-track,
+#current,
+.split,
+#totalTime {
+	display: inline-block;
+	color: #fff;
+}
+
 #r-control-container {
 	display: inline-block;
 	position: absolute;
@@ -90,5 +95,9 @@ img {
 /**************************************
 MAIN STYLE -- color on vid progression
 **************************************/
+input {
+    background: rgba(82, 82, 82, .9);
+    -webkit-appearance: none;
+}
 
 
