@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Tree House Video Player</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- CSS STYLING -->
 		<link href="css/Normalize.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
-	
+	</head>
 <!-- Video container/ caption -->
 	<div id="video-wrapper">
 		<video  id="video" class="media">
@@ -22,8 +23,8 @@
 			    <div id="l-control-container">
 					<div class="play-btn">
 						<button id='play-pause' class='play' title='play'>
-						<img src="icons/play-icon.png" id="play-icon">
-						<img src="icons/pause-icon.png" style="display: none;" id="pause-icon">
+						<img src="icons/play-icon.png" id="play-icon" alt="play button">
+						<img src="icons/pause-icon.png" style="display: none;" id="pause-icon" alt="pause button">
 						</button>
 						<div id="time-track">
 							<div id="current">0:00</div>
@@ -35,18 +36,18 @@
 			    <div id="r-control-container">
 				    <div class="mute-on-off">
 						<button type="button" class='mute' title='mute' id="mute">
-						<img src="icons/volume-on-icon.png" id="mute-icon">
-						<img src="icons/volume-off-icon.png" style="display: none;">
+						<img src="icons/volume-on-icon.png" id="mute-icon" alt="volume on button">
+						<img src="icons/volume-off-icon.png" style="display: none;" alt="volume off button">
 						</button>
 				    </div>
 				    
 				    <div  class="volume-bar">
-				    	<input type="range" id="volume-bar" min="0" max="1" step=".01" value="0" style="display: none;" >
+				    	<input type="range" id="volume-bar" min="0" max="100" step="1" value="1" style="display: none;" >
 				    </div>
 		
 				    <div class="full-screen">
 					   <button type="button" id="full-screen">
-					   <img src="icons/fullscreen-icon.png">
+					   <img src="icons/fullscreen-icon.png" alt="fullscreen button">
 					   </button> 
 				    </div>
 			    </div>
@@ -56,31 +57,169 @@
 	</div> 
 <!-- text filter -->
 	<div class="wrapper">	
-		<section>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus orci, sodales quis lacus vel, suscipit fermentum tellus. Phasellus nec dui luctus urna molestie posuere vel eu eros. Quisque aliquet consequat tortor mollis vehicula. Aliquam a tempor odio. Phasellus ut maximus ante. Aliquam feugiat fermentum mauris a tristique. Ut pharetra porta nulla, et venenatis lectus porttitor vitae. Pellentesque elementum, magna ut varius auctor, odio nulla aliquam diam, at ultrices purus sapien ut nulla. Fusce id diam lorem. Nam tempus dictum ligula, ut mattis dolor tempor vestibulum. 
-				</p>
-			
-				<p>
-					Pellentesque sagittis lorem vel sagittis hendrerit. Etiam ac tempor ante, vel consectetur justo. Nunc dapibus libero eu nibh commodo, ac porta dui porta. Praesent et augue sit amet leo pulvinar viverra. Nam scelerisque, lacus at ornare rutrum, ante sem dapibus dui, non pretium urna quam eu arcu. Proin vel neque sagittis, finibus nibh a, hendrerit diam. Duis consequat ipsum rutrum nibh tristique venenatis. Phasellus ut finibus metus. Donec id magna congue, finibus diam in, ullamcorper nisi. Nunc et leo nec sapien eleifend efficitur. Duis aliquam diam sed lobortis sagittis.
-				</p>
+		<ul class="transcript-list">
+			<li>
+				<div class="time">
+				00:02 
+				</div>
+				
+				<div class="transcipt">
+				Now that we've looked at the architecture
+				of the internet, let's see how you might
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:04
+				</div>
+				
+				<div class="transcipt">
+				connect your personal devices to
+				the internet inside your house.
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:07
+				</div>
+				
+				<div class="transcipt">
+				Well there are many ways to
+				connect to the internet, and
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:11
+				</div>
+				
+				<div class="transcipt">
+				most often people connect wirelessly.
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:14
+				</div>
+				
+				<div class="transcipt">
+				Let's look at an example of how
+				you can connect to the internet.
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:18
+				</div>
+				
+				<div class="transcipt">
+				If you live in a city or a town,
+				you probably have a coaxial cable for
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:22
+				</div>
+				
+				<div class="transcipt">
+				cable Internet, or a phone line if you
+				have DSL, running to the outside of
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:27
+				</div>
+				
+				<div class="transcipt">
+				your house, that connects you to
+				the Internet Service Provider, or ISP.
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:32
+				</div>
+				
+				<div class="transcipt">
+				If you live far out in the country,
+				you'll more likely have
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:35
+				</div>
+				
+				<div class="transcipt">
+				a dish outside your house, connecting
+				you wirelessly to your closest ISP, or
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:39
+				</div>
+				
+				<div class="transcipt">
+				you might also use the telephone system.
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:42
+				</div>
+				
+				<div class="transcipt">
+				Whether a wire comes straight from
+				the ISP hookup outside your house, or
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:46
+				</div>
 					
-				<p>
-					Praesent tempor, sem a tincidunt imperdiet, magna risus vehicula dui, at interdum odio nulla ac turpis. Suspendisse eu suscipit tellus, id aliquet ante. Phasellus vitae lorem enim. Aenean fermentum aliquam neque, eu laoreet odio. Praesent at eros tincidunt, rutrum orci id, auctor tellus. Ut vitae ultricies nisi. Morbi blandit ex non sollicitudin scelerisque. Maecenas mollis elementum vehicula. Donec ac sodales ex. Nullam ut luctus velit, in vestibulum lectus. Nunc condimentum auctor massa sed hendrerit. Cras gravida diam vestibulum eros eleifend, eu laoreet purus condimentum. Vestibulum eu enim urna.
-				</p>
-					
-				<p>
-					Duis iaculis, eros ac vehicula iaculis, lorem felis porta elit, eget blandit lacus sapien nec massa. Vestibulum sit amet elit eu orci vehicula tempus. Vestibulum eleifend urna nec interdum posuere. Integer dapibus aliquet purus id sollicitudin. Cras accumsan, turpis eget pretium elementum, purus dolor sagittis nunc, in sagittis velit ligula ut est. Nunc porta blandit urna, et condimentum enim gravida a. Etiam tempus, ligula ac tristique blandit, tellus justo maximus velit, eu gravida nunc urna a velit. Duis vulputate mi eu consectetur hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas dignissim malesuada cursus. Nunc eget dolor dapibus, finibus est sit amet, tempor massa. In aliquam sem sed nulla aliquam mollis vel non tortor. Mauris non ipsum magna. Sed non sapien quis magna rutrum consectetur.
-				</p>
-					
-				<p>
-					Proin euismod eros tincidunt magna ultricies, vitae volutpat tellus hendrerit. Nullam semper massa tellus, eu rutrum leo sollicitudin in. Quisque gravida congue ultricies. Donec feugiat, orci id eleifend faucibus, nibh nisi lacinia justo, quis euismod mi lacus eu lectus. Phasellus ultricies sit amet libero non convallis. Suspendisse convallis tortor ac neque volutpat venenatis. Nunc sagittis urna quis lorem eleifend ultrices. Mauris lectus enim, maximus at eros convallis, convallis mattis mauris.
-				</p>
-		</section>
+				<div class="transcipt">
+				it travels over radio
+				waves from your roof,
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:49
+				</div>
+				
+				<div class="transcipt">
+				the first stop a wire will make once
+				inside your house, is at your modem.
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:53
+				</div>
+				
+				<div class="transcipt">
+				A modem is what connects the internet
+				to your network at home.
+				</div>
+			</li>
+			<li>
+				<div class="time">
+				00:57
+				</div>
+				
+				<div class="transcipt">
+				A few common residential modems are DSL or
+				</div>
+			</li>
+		</ul>
 	</div>
 
 <!-- Javascript/Jquery for video control -->
-	<body>
+
 		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="js/video.js"></script>
 	</body>

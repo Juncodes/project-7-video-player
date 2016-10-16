@@ -4,7 +4,8 @@ window.onload = function() {
 	  var video = document.getElementById("video");
 	
 	  // Buttons
-	  var playIcon = document.getElementById("play-icon")
+	  var playBtn = document.getElementById("play-pause");
+	  var playIcon = document.getElementById("play-icon");
 	  var muteIcon = document.getElementById("mute-icon");
 	  var fullScreenButton = document.getElementById("full-screen");
 	 
@@ -15,7 +16,7 @@ window.onload = function() {
 	  
 	
 	// Event listener for the play/pause button
-	playIcon.addEventListener("click", function() {
+	playBtn.addEventListener("click", function() {
 	  if (video.paused == true) {
 	    // Play the video
 	    video.play();
@@ -27,6 +28,7 @@ window.onload = function() {
 	    // Update the button text to 'Play'
 	    playIcon.src = "icons/play-icon.png";
 	  }
+	  console.log(video);
 	});
 		
 	// Event listener for the full-screen button
@@ -55,6 +57,13 @@ window.onload = function() {
 		seekBar.style.background = "-ms-linear-gradient(left,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
 		seekBar.style.background = "linear-gradient(to right,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
 	}); // end time update  
+	
+	$seekBar.on("click", function(){
+		// Calculate the slider value
+		var value = 
+		// Update the slider value
+		 
+	});
 
 	
 	
@@ -63,7 +72,7 @@ window.onload = function() {
 	seekBar.addEventListener("mousedown", function() {
 		video.pause();
 		// Update the button text to 'Play'
-		playIcon.src = "icons/play-icon.png";
+		playIcon.src = "icons/pause-icon.png";
 	});
 
 	// Play the video when the slider handle is dropped
