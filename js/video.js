@@ -2,7 +2,19 @@ window.onload = function() {
 
 	  // Video
 	  var video = document.getElementById("video");
-	
+	  
+	  //Track
+	  var textTracks = videoElement.textTracks; // one for each track element
+	  var textTrack = textTracks[0]; // corresponds to the first track element
+	  var kind = textTrack.kind // e.g. "subtitles"
+	  var mode = textTrack.mode // e.g. "disabled", hidden" or "showing"
+
+	  //Cues
+	  var cues = textTrack.cues;
+	  var cue = cues[0]; // corresponds to the first cue in a track src file
+	  var cueId = cue.id // cue.id corresponds to the cue id set in the WebVTT file
+	  var cueText = cue.text; // "The Web is always changing", for example (or some JSON!)
+
 	  // Buttons
 	  var playBtn = document.getElementById("play-pause");
 	  var playIcon = document.getElementById("play-icon");
@@ -28,7 +40,6 @@ window.onload = function() {
 	    // Update the button text to 'Play'
 	    playIcon.src = "icons/play-icon.png";
 	  }
-	  console.log(video);
 	});
 		
 	// Event listener for the full-screen button
@@ -58,16 +69,12 @@ window.onload = function() {
 		seekBar.style.background = "linear-gradient(to right,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
 	}); // end time update  
 	
-	$seekBar.on("click", function(){
+/*	$seekBar.on("click", function(){
 		// Calculate the slider value
 		var value = 
-		// Update the slider value
-		 
+		// Update the slider value 
 	});
-
-	
-	
-		
+*/	
 	// Pause the video when the slider handle is being dragged
 	seekBar.addEventListener("mousedown", function() {
 		video.pause();
@@ -126,7 +133,7 @@ window.onload = function() {
 
 	// Event listener for the seek bar
 	$(document).ready(function(){
-		$("#video").on("timeupdate", function(event){
+		$('#video').on("timeupdate", function(event){
 			onTrackedVideoFrame(this.currentTime, this.duration);
 		});
 	});
@@ -140,7 +147,84 @@ window.onload = function() {
 		$("#current").text(timeFormat(currentTime));
 		$("#totalTime").text(timeFormat(duration));
 	}
+	var timeText = $('.timeSelected');
+/*	function transcriptFollow(currentTime == timeText){
+			$('.time').style.css(orange);
+	}
+*/	
+	// Event Listener for track follow on transcript
+	$(document).ready(function(){
+		$('#video').on("timeupdate", function(event){		
+			
+			switch(true) {
+				case (this.currentTime < 4):
+					console.log("less than 4");
+					break;
+				
+				case (this.currentTime < 7.6):
+					console.log("greater than 8");
+					break;
+			
+				case (this.currentTime < 11.2):
+					console.log("greater than 11");
+					break;
+				
+				case (this.currentTime < 13.9):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 17.9):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 22.3):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 26.8):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 30.9):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 34.7):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 39.4):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 41.1):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 46.3):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 49.2):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 53.7):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 57.7):
+					console.log("greater than 5");
+					break;
+				
+				case (this.currentTime < 60.1):
+					console.log("greater than 5");
+					break;		
+			} // end of cases for time tracking
+		});
+	});
 };
+
 
 
 
