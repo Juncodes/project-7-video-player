@@ -1,31 +1,19 @@
 window.onload = function() {
 
-	  // Video
+	// Video
 	  var video = document.getElementById("video");
 	  
-	  //Track
-	  var textTracks = videoElement.textTracks; // one for each track element
-	  var textTrack = textTracks[0]; // corresponds to the first track element
-	  var kind = textTrack.kind // e.g. "subtitles"
-	  var mode = textTrack.mode // e.g. "disabled", hidden" or "showing"
-
-	  //Cues
-	  var cues = textTrack.cues;
-	  var cue = cues[0]; // corresponds to the first cue in a track src file
-	  var cueId = cue.id // cue.id corresponds to the cue id set in the WebVTT file
-	  var cueText = cue.text; // "The Web is always changing", for example (or some JSON!)
-
-	  // Buttons
-	  var playBtn = document.getElementById("play-pause");
-	  var playIcon = document.getElementById("play-icon");
-	  var muteIcon = document.getElementById("mute-icon");
-	  var fullScreenButton = document.getElementById("full-screen");
-	 
-	  // Sliders 
-	  var $seekBar = $('#seek-bar');
-	  var seekBar = document.getElementById("seek-bar");
-	  var volumeBar = document.getElementById("volume-bar");
-	  
+	// Buttons
+	var playBtn = document.getElementById("play-pause");
+	var playIcon = document.getElementById("play-icon");
+	var muteIcon = document.getElementById("mute-icon");
+	var fullScreenButton = document.getElementById("full-screen");
+	
+	// Sliders 
+	var $seekBar = $('#seek-bar');
+	var seekBar = document.getElementById("seek-bar");
+	var volumeBar = document.getElementById("volume-bar");
+	
 	
 	// Event listener for the play/pause button
 	playBtn.addEventListener("click", function() {
@@ -157,68 +145,84 @@ window.onload = function() {
 		$('#video').on("timeupdate", function(event){		
 			
 			switch(true) {
-				case (this.currentTime < 4):
-					console.log("less than 4");
+				case (this.currentTime > 0 && this.currentTime < 4.1):
+					$('#twoSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 7.6):
-					console.log("greater than 8");
+				case (this.currentTime > 4.1 && this.currentTime < 7.5):
+					$('#twoSec').css("backgroundColor", "white");
+					$('#fourSec').css("backgroundColor", "orange");
 					break;
+				
 			
-				case (this.currentTime < 11.2):
-					console.log("greater than 11");
+				case (this.currentTime > 7.5 && this.currentTime < 11.27):
+					$('#fourSec').css("backgroundColor", "white");
+					$('#sevenSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 13.9):
-					console.log("greater than 5");
+				case (this.currentTime > 11.27 && this.currentTime < 13.9):
+					$('#sevenSec').css("backgroundColor", "white");
+					$('#elevenSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 17.9):
-					console.log("greater than 5");
+				case (this.currentTime > 13.9 && this.currentTime < 17.9):
+					$('#elevenSec').css("backgroundColor", "white");
+					$('#fourteenSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 22.3):
-					console.log("greater than 5");
+				case (this.currentTime > 17.9 && this.currentTime < 22.37):
+					$('#fourteenSec').css("backgroundColor", "white");
+					$('#eighteenSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 26.8):
-					console.log("greater than 5");
+				case (this.currentTime > 22.37 && this.currentTime < 26.88):
+					$('#eighteenSec').css("backgroundColor", "white");
+					$('#twentytwoSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 30.9):
-					console.log("greater than 5");
+				case (this.currentTime > 26.88 && this.currentTime < 32.1):
+					$('#twentytwoSec').css("backgroundColor", "white");
+					$('#twentysevenSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 34.7):
-					console.log("greater than 5");
+				case (this.currentTime > 32.1 && this.currentTime < 34.73):
+					$('#twentysevenSec').css("backgroundColor", "white");
+					$('#thirtytwoSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 39.4):
-					console.log("greater than 5");
+				case (this.currentTime > 34.73 && this.currentTime < 39.43):
+					$('#thirtytwoSec').css("backgroundColor", "white");
+					$('#thirtyfiveSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 41.1):
-					console.log("greater than 5");
+				case (this.currentTime > 39.43 && this.currentTime < 41.19):
+					$('#thirtyfiveSec').css("backgroundColor", "white");
+					$('#thirtynineSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 46.3):
-					console.log("greater than 5");
+				case (this.currentTime > 42.35 && this.currentTime < 46.3):
+					$('#thirtynineSec').css("backgroundColor", "white");
+					$('#fourtyoneSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 49.2):
-					console.log("greater than 5");
+				case (this.currentTime > 46.3 && this.currentTime < 49.27):
+					$('#fourtyoneSec').css("backgroundColor", "white");
+					$('#fourtysixSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 53.7):
-					console.log("greater than 5");
+				case (this.currentTime > 49.27 && this.currentTime < 53.76):
+					$('#fourtysixSec').css("backgroundColor", "white");
+					$('#fourtynineSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 57.7):
-					console.log("greater than 5");
+				case (this.currentTime > 53.76 && this.currentTime < 57.78):
+					$('#fourtynineSec').css("backgroundColor", "white");
+					$('#fiftythreeSec').css("backgroundColor", "orange");
 					break;
 				
-				case (this.currentTime < 60.1):
-					console.log("greater than 5");
+				case (this.currentTime > 57.78 && this.currentTime < 60.1):
+					$('#fiftythreeSec').css("backgroundColor", "white");
+					$('#fiftysevenSec').css("backgroundColor", "orange");
 					break;		
 			} // end of cases for time tracking
 		});
