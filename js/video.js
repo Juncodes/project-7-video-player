@@ -136,10 +136,8 @@ window.onload = function() {
 		
 		// Event listener for the seek bar
 		seekBar.addEventListener("change", function() {
-		
 		// Calculate the new time
 		var time = video.duration * (seekBar.value / 100);
-		
 		// Update the video time
 		video.currentTime = time;
 		});
@@ -150,82 +148,83 @@ window.onload = function() {
 		$('#video').on("timeupdate", function(event){		
 			switch(true) {
 				case (this.currentTime > 0 && this.currentTime < 4.1):
-						$('#twoSec').css("backgroundColor", "orange");	
+					$('li').css("backgroundColor", "white");
+					$('#twoSec').css("backgroundColor", "orange");	
 					break;
 				
 				case (this.currentTime > 4.1 && this.currentTime < 7.5):
-					$('#twoSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#fourSec').css("backgroundColor", "orange");
 					break;
 				
 			
 				case (this.currentTime > 7.5 && this.currentTime < 11.27):
-					$('#fourSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#sevenSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 11.27 && this.currentTime < 13.9):
-					$('#sevenSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#elevenSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 13.9 && this.currentTime < 17.9):
-					$('#elevenSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#fourteenSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 17.9 && this.currentTime < 22.37):
-					$('#fourteenSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#eighteenSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 22.37 && this.currentTime < 26.88):
-					$('#eighteenSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#twentytwoSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 26.88 && this.currentTime < 32.1):
-					$('#twentytwoSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#twentysevenSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 32.1 && this.currentTime < 34.73):
-					$('#twentysevenSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#thirtytwoSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 34.73 && this.currentTime < 39.43):
-					$('#thirtytwoSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#thirtyfiveSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 39.43 && this.currentTime < 41.19):
-					$('#thirtyfiveSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#thirtynineSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 42.35 && this.currentTime < 46.3):
-					$('#thirtynineSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#fourtyoneSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 46.3 && this.currentTime < 49.27):
-					$('#fourtyoneSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#fourtysixSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 49.27 && this.currentTime < 53.76):
-					$('#fourtysixSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#fourtynineSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 53.76 && this.currentTime < 57.78):
-					$('#fourtynineSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#fiftythreeSec').css("backgroundColor", "orange");
 					break;
 				
 				case (this.currentTime > 57.78 && this.currentTime < 60.1):
-					$('#fiftythreeSec').css("backgroundColor", "white");
+					$('li').css("backgroundColor", "white");
 					$('#fiftysevenSec').css("backgroundColor", "orange");
 					break;		
 			} // end of cases for time tracking 
