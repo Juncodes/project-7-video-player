@@ -55,14 +55,8 @@ window.onload = function() {
 		seekBar.style.background = "-o-linear-gradient(left,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
 		seekBar.style.background = "-ms-linear-gradient(left,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
 		seekBar.style.background = "linear-gradient(to right,  #e78636 0%,#e78636 "+ value +"%,#525252 "+ value +"%,#525252 100%)";
-	}); // end time update  
-	
-/*	$seekBar.on("click", function(){
-		// Calculate the slider value
-		var value = 
-		// Update the slider value 
 	});
-*/	
+	
 	// Pause the video when the slider handle is being dragged
 	seekBar.addEventListener("mousedown", function() {
 		video.pause();
@@ -136,17 +130,27 @@ window.onload = function() {
 		$("#totalTime").text(timeFormat(duration));
 	}
 	var timeText = $('.timeSelected');
-/*	function transcriptFollow(currentTime == timeText){
-			$('.time').style.css(orange);
-	}
-*/	
+	
+	//Event listener for on click seek bar update
+	video.addEventListener("timeupdate", function() {
+		
+		// Event listener for the seek bar
+		seekBar.addEventListener("change", function() {
+		
+		// Calculate the new time
+		var time = video.duration * (seekBar.value / 100);
+		
+		// Update the video time
+		video.currentTime = time;
+		});
+	});
+	
 	// Event Listener for track follow on transcript
 	$(document).ready(function(){
 		$('#video').on("timeupdate", function(event){		
-			
 			switch(true) {
 				case (this.currentTime > 0 && this.currentTime < 4.1):
-					$('#twoSec').css("backgroundColor", "orange");
+						$('#twoSec').css("backgroundColor", "orange");	
 					break;
 				
 				case (this.currentTime > 4.1 && this.currentTime < 7.5):
@@ -224,9 +228,9 @@ window.onload = function() {
 					$('#fiftythreeSec').css("backgroundColor", "white");
 					$('#fiftysevenSec').css("backgroundColor", "orange");
 					break;		
-			} // end of cases for time tracking
-		});
-	});
+			} // end of cases for time tracking 
+		}); 
+	});	
 };
 
 
